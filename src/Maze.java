@@ -1,5 +1,10 @@
 
 public class Maze {
+	// 0 = blank tile
+	// 1 = solution path tile
+	// 2 = generated path tile
+	// 3 = start tile
+	// 4 = end tile
 
 	int x_size;
 	int y_size;
@@ -15,7 +20,7 @@ public class Maze {
 		}
 	}
 	
-	public void fillGrid() {
+	public void fillGrid(int gridSize) {
 		for(char[] each : grid) {
 			for(char item : each) {
 				item = 'O';
@@ -27,7 +32,7 @@ public class Maze {
 		
 	}
 	
-	public void checkInGrid(int xOrY) {
+	public void checkIfInGrid(int xOrY) {
 		
 	}
 	
