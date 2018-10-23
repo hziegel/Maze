@@ -8,7 +8,7 @@ public class Maze {
 
 	int x_size;
 	int y_size;
-	char[][] grid;
+	int[][] grid;
 	int[] startTile;
 	int[] endTile;
 	
@@ -16,7 +16,7 @@ public class Maze {
 		if(x!=0 & y!=0 & x%6==0 & y%6==0) {
 			x_size = x;
 			y_size = y;
-			grid = new char[x][y];
+			grid = new int[x][y];
 		}
 	}
 	
@@ -28,8 +28,8 @@ public class Maze {
 		}
 	}
 	
-	public void randomTile() {
-		
+	public int[] randomTile() {
+		return [Math.random()*x_size,Math.random()*y_size];
 	}
 	
 	public void checkIfInGrid(int xOrY) {
@@ -37,7 +37,13 @@ public class Maze {
 	}
 	
 	public void checkIfFinish() {
+		 
+	}
+	
+	public int[][] createMaze() {
+		startTile = randomTile();
 		
+		return grid;
 	}
 	
 	
