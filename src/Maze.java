@@ -1,4 +1,3 @@
-
 public class Maze {
 	// 0 = blank tile
 	// 1 = solution path tile
@@ -21,15 +20,15 @@ public class Maze {
 	}
 	
 	public void fillGrid(int gridSize) {
-		for(char[] each : grid) {
-			for(char item : each) {
-				item = 'O';
+		for(int[] each : grid) {
+			for(int item : each) {
+				grid[item] = 0;
 			}
 		}
 	}
 	
 	public int[] randomTile() {
-		return [Math.random()*x_size,Math.random()*y_size];
+		return new int[]{Math.toIntExact(Math.round(Math.random()*Double.valueOf(x_size))),Math.toIntExact(Math.round(Math.random()*Double.valueOf(y_size)))};
 	}
 	
 	public void checkIfInGrid(int xOrY) {
@@ -42,6 +41,10 @@ public class Maze {
 	
 	public int[][] createMaze() {
 		startTile = randomTile();
+		endTile = randomTile();
+		while(endTile == startTile) {
+			endTile = randomTile();
+		}
 		
 		return grid;
 	}
